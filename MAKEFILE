@@ -1,0 +1,11 @@
+# Makefile for jlib applications
+
+jlibpath=c:/dj/src/jlib/
+input=jake.c
+output=a.exe
+
+program : $(jlibpath)jlib.o
+	gcc -fomit-frame-pointer -O6 -o$(output) $(input) $(jlibpath)jlib.o
+
+$(jlibpath)jlib.o : $(jlibpath)jlib.c
+	gcc -fomit-frame-pointer -s -c -O6  $(jlibpath)jlib.c -o$(jlibpath)jlib.o
